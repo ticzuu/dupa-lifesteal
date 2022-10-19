@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+}
+
+group = 'pl.ticzuu'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'spigotmc-repo'
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+    }
+    maven {
+        name = 'sonatype'
+        url = 'https://oss.sonatype.org/content/groups/public/'
+    }
+    maven { url = "https://repo.mattstudios.me/artifactory/public/" }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+}
+
+compileJava {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    destinationDir = file("D:/pluginsy")
+    archiveName("t-lifesteal.jar")
+}
+
+processResources {
+    doFirst {
+        file("$buildDir/resources/main").listFiles().each {
+            it.delete()
+        }
+    }
+}

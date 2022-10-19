@@ -1,0 +1,6 @@
+name: t-LifeSteal
+version: '${version}'
+main: pl.ticzuu.LifeStealPlugin
+api-version: 1.16
+authors: [ticzuu]
+description: dupa lifesteal
